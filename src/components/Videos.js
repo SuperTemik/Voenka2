@@ -1,7 +1,7 @@
 const React = require('react');
 const Video = require('components/Video');
 
-const РТО = require('../../static/videos/РТО.mp4');
+const РТО = require('../../public/video/РТО.mp4');
 
 const Videos = React.createClass({
   render() {
