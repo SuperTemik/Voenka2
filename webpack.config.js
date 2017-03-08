@@ -13,7 +13,8 @@ const config = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, 'public'),
-    publicPath: '/military/public/',
+    publicPath: '', // for local
+    // publicPath: '/military/public/', // for github pages
     chunkFilename: '[id].chunk.js'
   },
   module: {
@@ -32,11 +33,19 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'file?name=images/[name].[ext]'
+        loader: 'file?name=images/[name]--[hash:2].[ext]'
       },
       {
         test: /\.(woff|ttf|eot)/,
         loader: 'url'
+      },
+      {
+        test: /\.mp4/,
+        loader: 'file?name=videos/[name].[ext]'
+      },
+      {
+        test: /\.pdf/,
+        loader: 'file?name=docs/[name].[ext]'
       },
       {
         test: /\.svg/,
@@ -52,11 +61,6 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html'
-    }),
-    new webpack.ProvidePlugin({
-      '$': 'jquery',
-      'jQuery': 'jquery',
-      'window.jQuery': 'jquery'
     })
   ],
   resolve: {
