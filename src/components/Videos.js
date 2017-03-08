@@ -1,14 +1,14 @@
 const React = require('react');
 const Video = require('components/Video');
 
-const РТО = require('../../public/video/РТО.mp4');
+const RTO = require('../../public/video/RTO.mp4');
 
 const Videos = React.createClass({
   render() {
     return (
       <div className="container">
         <div className="row">
-          <Video src={РТО} title="Назначение и состав"/>
+          <Video src={RTO} title="Ghbdtn"/>
         </div>
         <div className="row">
           //<Video src={drl} title="ДРЛ ТТХ"/>
